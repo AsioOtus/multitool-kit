@@ -10,7 +10,7 @@ public struct Untracked <Value, Failure>: ProcessorProtocol {
 	public func process (_ originalValue: Value) -> ProcessingResult<Value, Failure> {
 		var results = [ProcessingResult<Value, Failure>]()
 		
-		var value = originalValue
+		let value = originalValue
 		for processor in processors {
 			let result = processor.process(value)
 			results.append(result)

@@ -3,21 +3,55 @@
 import PackageDescription
 
 let package = Package(
-	name: "MultitoolEnhanced",
-	products: [
-		.library(
-			name: "MultitoolEnhanced",
-			targets: ["MultitoolEnhanced"]
-		)
-	],
-	targets: [
-		.target(
-			name: "MultitoolEnhanced",
-			path: "Sources/Core"
-		),
-		.target(
-			name: "Drafts",
-			path: "Sources/Drafts"
-		),
-	]
+  name: "multitool-complex",
+  products: [
+    .library(
+      name: "MultitoolComplex",
+      targets: [
+        "MultitoolDispatch",
+        "MultitoolEcho",
+        "MultitoolFluent",
+        "MultitoolStringConverters",
+        "MultitoolValueProcessing",
+        "MultitoolTree",
+      ]
+    )
+  ],
+  targets: [
+    .target(
+      name: "MultitoolDispatch",
+      path: "Sources/Core/Dispatch"
+    ),
+    .target(
+      name: "MultitoolEcho",
+      path: "Sources/Core/Echo"
+    ),
+    .target(
+      name: "MultitoolFluent",
+      path: "Sources/Core/Fluent"
+    ),
+    .target(
+      name: "MultitoolStringConverters",
+      path: "Sources/Core/StringConverters"
+    ),
+    .target(
+      name: "MultitoolValueProcessing",
+      path: "Sources/Core/ValueProcessing"
+    ),
+    .target(
+      name: "MultitoolTree",
+      path: "Sources/Core/Tree"
+    ),
+    .executableTarget(
+      name: "Testground",
+      dependencies: [
+        "MultitoolDispatch",
+        "MultitoolEcho",
+        "MultitoolFluent",
+        "MultitoolStringConverters",
+        "MultitoolValueProcessing",
+        "MultitoolTree",
+      ]
+    )
+  ]
 )
