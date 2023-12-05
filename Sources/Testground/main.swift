@@ -11,24 +11,34 @@ struct Model: Identifiable, Codable {
 }
 
 if #available(macOS 10.15, *) {
-  let tree = Tree<Model, StandardTreeNode<Model, Model>>.node(
-    .init(
-      details: .init(id: 1, value: "AAA"),
-      trees: [
-        .leaf(.init(id: 11, value: "BBB")),
-        .node(
-          .init(
-            details: .init(id: 111, value: "CCC"),
-            trees: [
-              .leaf(.init(id: 1111, value: "DDD")),
-              .leaf(.init(id: 1112, value: "EEE")),
-            ]
-          )
-        ),
-        .leaf(.init(id: 12, value: "FFF")),
-      ]
-    )
-  )
+	let l = Tree<Model, StandardTreeNode<Model, Model>>.leaf(.init(id: 11, value: "BBB"))
+
+	let tree = Tree<Model, StandardTreeNode<Model, Model>>
+		.node(
+			.init(
+				details: .init(id: 1, value: "AAA"),
+				trees: [
+					.leaf(.init(id: 11, value: "BBB")),
+					.node(
+						.init(
+							details: .init(id: 111, value: "CCC"),
+							trees: [
+								.leaf(.init(id: 1111, value: "DDD")),
+								.leaf(.init(id: 1112, value: "EEE")),
+								.node(
+									.init(details: .init(id: 11, value: "BBB"), trees: [
+										.leaf(.init(id: 1112, value: "EEE")),
+									]))
+							]
+						)
+					),
+					.leaf(.init(id: 12, value: "FFF")),
+				]
+			)
+		)
+
+	print(l.depth)
+	print(tree.depth)
 
   let treeData = try! JSONEncoder().encode(tree)
   let treeJsonString = String(data: treeData, encoding: .utf8)!

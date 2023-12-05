@@ -18,6 +18,13 @@ public extension Tree {
     if case .node(let node) = self { return node }
     else { return nil }
   }
+
+	var depth: Int {
+		switch self {
+		case .leaf: 1
+		case .node(let node): node.depth + 1
+		}
+	}
 }
 
 

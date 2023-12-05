@@ -4,6 +4,8 @@ public protocol TreeNode<Leaf> {
 
   typealias InnerTree = Tree<Leaf, Self>
 
+	var depth: Int { get }
+
   var trees: [InnerTree] { get set }
 
   mutating func prepended (leaf: Leaf) -> Self
@@ -15,6 +17,13 @@ public protocol TreeNode<Leaf> {
   mutating func replacedAll (with trees: [InnerTree]) -> Self
 
   mutating func removed (at index: Int) -> Self
+}
+
+@available(iOS 13, macOS 10.15, *)
+public extension TreeNode {
+	var depth: Int {
+		trees.map(\.depth).max() ?? 0
+	}
 }
 
 @available(iOS 13, macOS 10.15, *)
