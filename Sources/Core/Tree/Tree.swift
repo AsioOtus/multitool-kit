@@ -9,6 +9,16 @@ extension Tree: Codable where Leaf: Codable, Node: Codable { }
 
 @available(iOS 13, macOS 10.15, *)
 public extension Tree {
+	var isLeaf: Bool { 
+		if case .leaf = self { true }
+		else { false }
+	}
+
+	var isNode: Bool {
+		if case .node = self { true }
+		else { false }
+	}
+
   var leafValue: Leaf? {
     if case .leaf(let leaf) = self { return leaf }
     else { return nil }
