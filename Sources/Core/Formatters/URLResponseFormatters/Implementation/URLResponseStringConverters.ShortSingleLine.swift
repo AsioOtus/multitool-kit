@@ -1,5 +1,9 @@
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 extension URLResponseStringConverters {
 	public struct ShortSingleLine: URLResponseFormatter {
 		public init () { }

@@ -1,5 +1,9 @@
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 extension URLResponseStringConverters {
 	public struct Default: URLResponseFormatter {
 		public static let `default` = Self()

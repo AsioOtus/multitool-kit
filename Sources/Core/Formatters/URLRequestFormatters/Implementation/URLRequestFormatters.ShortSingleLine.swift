@@ -1,5 +1,9 @@
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 extension URLRequestFormatters {
 	public struct ShortSingleLine: URLRequestFormatter {
 		public init () { }
