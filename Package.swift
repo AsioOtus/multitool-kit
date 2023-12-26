@@ -3,10 +3,10 @@
 import PackageDescription
 
 let package = Package(
-  name: "multitool-complex",
+  name: "multitool-kit",
   products: [
     .library(
-      name: "MultitoolComplex",
+      name: "MultitoolKit",
       targets: [
         "MultitoolDispatch",
         "MultitoolEcho",
