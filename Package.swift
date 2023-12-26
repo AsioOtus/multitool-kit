@@ -11,7 +11,7 @@ let package = Package(
         "MultitoolDispatch",
         "MultitoolEcho",
         "MultitoolFluent",
-        "MultitoolStringConverters",
+        "MultitoolFormatters",
         "MultitoolValueProcessing",
         "MultitoolTree",
       ]
@@ -31,8 +31,8 @@ let package = Package(
       path: "Sources/Core/Fluent"
     ),
     .target(
-      name: "MultitoolStringConverters",
-      path: "Sources/Core/StringConverters"
+      name: "MultitoolFormatters",
+      path: "Sources/Core/Formatters"
     ),
     .target(
       name: "MultitoolValueProcessing",
@@ -48,7 +48,7 @@ let package = Package(
         "MultitoolDispatch",
         "MultitoolEcho",
         "MultitoolFluent",
-        "MultitoolStringConverters",
+        "MultitoolFormatters",
         "MultitoolValueProcessing",
         "MultitoolTree",
       ]
