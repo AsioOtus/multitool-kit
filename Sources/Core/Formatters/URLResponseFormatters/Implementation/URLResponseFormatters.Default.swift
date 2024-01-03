@@ -42,3 +42,15 @@ extension URLResponseFormatters {
 		}
 	}
 }
+
+public extension URLResponseFormatter where Self == URLResponseFormatters.Default {
+	static func `default` (
+		dataStringConverter: OptionalDataFormatter = DataFormatters.OptionalComposite.default,
+		dictionaryStringConverter: DictionaryFormatter = DictionaryFormatters.Multiline.default
+	) -> Self {
+		.init(
+			dataStringConverter: dataStringConverter,
+			dictionaryStringConverter: dictionaryStringConverter
+		)
+	}
+}

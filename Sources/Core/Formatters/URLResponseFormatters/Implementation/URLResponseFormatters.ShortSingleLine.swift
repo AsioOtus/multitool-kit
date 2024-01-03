@@ -13,3 +13,9 @@ extension URLResponseFormatters {
 		}
 	}
 }
+
+public extension URLResponseFormatter where Self == URLResponseFormatters.ShortSingleLine {
+	static func shortSingleLine () -> Self {
+		.init()
+	}
+}
