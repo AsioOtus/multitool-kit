@@ -4,7 +4,7 @@ import Foundation
 import FoundationNetworking
 #endif
 
-extension URLResponseStringConverters {
+extension URLResponseFormatters {
 	public struct ShortSingleLine: URLResponseFormatter {
 		public init () { }
 		

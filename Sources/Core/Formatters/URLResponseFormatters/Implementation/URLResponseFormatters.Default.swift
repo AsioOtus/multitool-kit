@@ -4,7 +4,7 @@ import Foundation
 import FoundationNetworking
 #endif
 
-extension URLResponseStringConverters {
+extension URLResponseFormatters {
 	public struct Default: URLResponseFormatter {
 		public static let `default` = Self()
 		
