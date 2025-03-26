@@ -6,47 +6,37 @@ let package = Package(
   name: "multitool-kit",
   products: [
     .library(
-      name: "MultitoolKitDispatch",
-      targets: [
-        "MultitoolDispatch",
-      ]
+        name: "MultitoolKitEcho",
+        targets: [
+            "MultitoolEcho",
+        ]
     ),
-		.library(
-			name: "MultitoolKitEcho",
-			targets: [
-				"MultitoolEcho",
-			]
-		),
-		.library(
-			name: "MultitoolKitFluent",
-			targets: [
-				"MultitoolFluent",
-			]
-		),
-		.library(
-			name: "MultitoolKitFormatters",
-			targets: [
-				"MultitoolFormatters",
-			]
-		),
-		.library(
-			name: "MultitoolKitValueProcessing",
-			targets: [
-				"MultitoolValueProcessing",
-			]
-		),
-		.library(
-			name: "MultitoolKitTree",
-			targets: [
-				"MultitoolTree",
-			]
-		),
+    .library(
+        name: "MultitoolKitFluent",
+        targets: [
+            "MultitoolFluent",
+        ]
+    ),
+    .library(
+        name: "MultitoolKitFormatters",
+        targets: [
+            "MultitoolFormatters",
+        ]
+    ),
+    .library(
+        name: "MultitoolKitValueProcessing",
+        targets: [
+            "MultitoolValueProcessing",
+        ]
+    ),
+    .library(
+        name: "MultitoolKitTree",
+        targets: [
+            "MultitoolTree",
+        ]
+    ),
   ],
   targets: [
-    .target(
-      name: "MultitoolDispatch",
-      path: "Sources/Core/Dispatch"
-    ),
     .target(
       name: "MultitoolEcho",
       path: "Sources/Core/Echo"
